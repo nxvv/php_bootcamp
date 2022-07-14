@@ -17,6 +17,7 @@ if (!function_exists('nav_item')) {
       //     <a class="nav-link" href="$lien">$titre</a>
       //   </li>
       // HTML;
+      // Used for test  
     }
 }
 
