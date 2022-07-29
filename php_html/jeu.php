@@ -29,9 +29,9 @@ foreach(['parfum','supplement','cornet'] as $name){
                 }
             }
         }else{
-            if(isset($$liste[$value])){
+            if(isset($$liste[$choix])){
                 $ingredients[] = $choix;
-                $total += $$liste[$value];
+                $total += $$liste[$choix];
             }
         }
     }
