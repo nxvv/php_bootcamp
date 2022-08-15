@@ -47,4 +47,38 @@ function radio (string $name, string $value, array $data)
     <input type="radio" name="$name" value="$value" $attributes> 
 HTML;
 }
+
+function creneaux_html(array $creneaux, array $jours)
+{
+    $phrases = [];
+    $phrase1 = "";
+    $phrase2 = "";
+
+    foreach($jours as $key => $jour) {
+        if(!empty($creneaux[$key])){
+            $phrase1 = "{$jour} : de <strong>{$creneaux[$key][0][0]}h</strong> à <strong>{$creneaux[$key][0][1]}h</strong>";
+            if(isset($creneaux[$key][1])){
+                $phrase2 = "de <strong>{$creneaux[$key][1][0]}h</strong> à <strong>{$creneaux[$key][1][1]}h</strong>";
+                $phrases [] = $phrase1 . ' et ' . $phrase2;
+            }else{
+                $phrases[] = $phrase1;
+            }
+        }else{
+            $phrases[] = "{$jour} : <strong> Pas d'ouverture. </strong>";
+        }
+    }
+    return $phrases;
+}
+
+function in_creneaux(int $heure, array $creneaux): bool
+{
+    foreach ($creneaux as $c) {
+        $debut = $c[0];
+        $fin = $c[1];
+        if($heure >= $debut && $heure < $fin){
+            return true;
+        }
+    }
+    return false;
+}
 ?>
