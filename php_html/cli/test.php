@@ -1,5 +1,5 @@
 <?php
-
-$fichier = __DIR__.DIRECTORY_SEPARATOR.'demo.csv';
-$resource = fopen($fichier, 'r');
-echo fread($resource,2);
+require dirname(__DIR__). DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'Creneau.php';
+$creneau = new Creneau(9, 12);
+$creneau2 = new Creneau(14, 16);
+echo $creneau->toHTML();

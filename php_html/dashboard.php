@@ -1,4 +1,7 @@
 <?php 
+session_start();
+require 'functions/auth.php';
+forcer_utilisateur_connecte();
 require 'functions/compteur.php';
 ajouter_vue();
 $annee = (int)date('Y');
