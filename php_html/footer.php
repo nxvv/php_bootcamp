@@ -2,7 +2,13 @@
 
 <div class="row">
   <div class="col-md-4">
-    <!-- Il y a <?= $total ?> visite<?php if($total > 1) : ?>s<?php endif; ?> sur le site -->
+      <?php 
+        require __DIR__ . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'DoubleCompteur.php';
+        $compteur = new DoubleCompteur(__DIR__ . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'compteur');
+        // $compteur->incrementer();
+        $vues = $compteur->recuperer();
+      ?>
+    Il y a <?= $vues ?> visite<?php if($vues > 1) : ?>s<?php endif; ?> sur le site
   </div>
   <div class="col-md-4"></div>
   <div class="col-md-4">
