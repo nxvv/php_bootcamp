@@ -1,0 +1,2 @@
+{"username":"John Doe","message":"Mon message\r\nSur plusieurs lignes","date":1665583402}
+{"username":"hardev","message":"Votre message est re\u00e7u.","date":1665583463}
