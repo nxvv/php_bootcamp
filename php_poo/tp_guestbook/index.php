@@ -46,6 +46,14 @@ require 'elements/header.php';
         </div>
         <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
+
+    <?php if (!empty($messages)) : ?>
+        <h1 class="mt-4">Vos messages</h1>
+
+        <?php foreach ($messages as $message) : ?>
+            <?= $message->toHTML() ?>
+        <?php endforeach ?>
+    <?php endif ?>
 </div>
 
 <?php require 'elements/footer.php'; ?>
